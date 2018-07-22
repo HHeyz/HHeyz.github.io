@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 2</title>
+	<script type="text/javascript">
+	var postaltest = false;
+	var phonetest = false;
+	
+	function begin(){
+		document.getElementById("firstname").focus();
+	}
+	
+	function names(name){
+		var input = document.getElementById(name);
+		
+		if (input.value != ""){
+			var splitted = input.value.split(" ");
+			input.value = "";
+			
+			for (x = 0; x < splitted.length; x++){
+				input.value += splitted[x].charAt(0).toUpperCase() + splitted[x].substr(1) + " ";
+			}
+		}
+		
+		input.value = input.value.trim();
+	}
+	
+	function postalcode(){
+		var input = document.getElementById("postal");
+		input.value = input.value.toUpperCase();
+		var reg = /^[A-Z]\d[A-Z]\s?\d[A-Z]\d$/;
+		
+		if (reg.test(input.value) == true){
+			postaltest = true;
+		}
+	}
+	
+	function numbers(){
+		var input = document.getElementById("phone");
+		var reg = /^\(?\d{3}\)?[\.\-\/\s]?\d{3}[\.\-\/\s]?\d{4}$/;
+		
+		if (reg.test(input.value) == true){
+			phonetest = true;
+		}
+	}
+	
+	function submittest(){
+		var result = true;
+		document.getElementById("error").innerHTML = "";
+		if (document.getElementById("firstname").value == ""){
+			document.getElementById("error").innerHTML += "Please enter your first name" + "<br>";
+			document.getElementById("firstname").focus();
+			result = false;
+		} 
+		
+		if (document.getElementById("lastname").value == ""){
+			document.getElementById("error").innerHTML += "Please enter your last name" + "<br>";
+			document.getElementById("lastname").focus();
+			result = false;
+		}
+		
+		if (document.getElementById("phone").value == ""){
+			document.getElementById("error").innerHTML += "Please enter your phone number" + "<br>";
+			document.getElementById("phone").focus();
+			result = false;
+		}
+		
+		if (document.getElementById("postal").value == ""){
+			document.getElementById("error").innerHTML += "Please enter your postal code" + "<br>";
+			document.getElementById("postal").focus();
+			result = false;
+		}
+		
+		if (postaltest == false){
+			document.getElementById("error").innerHTML += "Your postal code format is incorrect" + "<br>";
+			document.getElementById("postal").focus();
+			result = false;
+		}
+		
+		if (phonetest == false){
+			document.getElementById("error").innerHTML += "Your phone number format is incorrect" + "<br>";
+			document.getElementById("phone").focus();
+			result = false;
+		}
+		
+		if(result == true){
+			alert("Form submitted.");
+		}
+
+		return result;
+	}
+	</script>
+</head>
+<body onload="begin()">
+	<h1><u>Please fill the information for video games</u></h1>
+	<form method="post" onsubmit="return submittest()">
+
+		<label for="firstname">First Name (<b>Mandatory</b>): </label>
+			<input type="text" id="firstname" onfocusout="names('firstname')"><br>
+		<label for="lastname">Last Name (<b>Mandatory</b>): </label>
+			<input type="text" id="lastname" onfocusout="names('lastname')"><br>
+		<label type="text">Phone Number (<b>Mandatory</b>): </label>
+			<input type="text" id="phone" onfocusout="numbers()"><br>
+		<label type="postal">Postal (<b>Mandatory</b>): </label>
+			<input type="text" id="postal" onfocusout="postalcode()">
+		
+		<br><br>
+		<label for="system">System played on: </label>
+			<select name="system" tabindex="5">
+				<option value="playstation">Playstation</option>
+				<option value="xbox">Xbox</option>
+				<option value="switch">Nintendo switch</option>
+				<option value="pc">Pc</option>
+			</select>
+		
+		<br><br>
+		<label for="question">Do you play on more than one?</label>
+			<input type="radio" name="question" value="yes" checked>Yes
+			<input type="radio" name="question" value="no">No
+		
+		<br><br>
+		<label for="genre"><b>Genre</b></label><br>
+			<input type="checkbox" name="genre" value="action">Action<br>
+			<input type="checkbox" name="genre" value="rpg">RPG<br>
+			<input type="checkbox" name="genre" value="adventure">Adventure<br>
+			<input type="checkbox" name="genre" value="shooter">Shooter
+		
+		<br><br>
+		<input type="submit" value="Submit">
+		<br><p id="error" style="color:red"></p>
+	</form>
+</body>
+</html>
