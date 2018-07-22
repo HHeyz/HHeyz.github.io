@@ -1,0 +1,153 @@
+
+* {	/* Reset */
+	margin: 0;
+	padding: 0;
+}
+html {
+	background: linear-gradient(black, white, black);
+	background-attachment: fixed;
+}
+body {
+	width: 60%;
+	background-color: white;
+	margin: 0 auto; 
+	border: 1px solid black;
+}
+
+/* Header */
+header { 
+	background-color: black;
+    padding-bottom: 1em;
+	text-align: center;
+} 
+header img { 
+	float: left;
+	padding-left: 1em;
+	padding-top: .5em;
+} 
+header h1 {
+	font-size: 250%;
+	color: #fbd989
+}
+
+/* Navigation menu */
+#nav_menu ul {
+	list-style: none;
+}
+#nav_menu > ul > li {
+	float: left;
+	width: 19.84%;
+	position: relative;
+	padding-right: 0.2%;
+}
+#nav_menu li:last-child {
+	padding-right: 0;
+}
+#nav_menu ul ul {
+	display: none;
+	position: absolute;
+	z-index: 2;
+}
+#nav_menu ul li:hover > ul {
+	display: block;
+	width: 100%;
+}
+#nav_menu ul li:hover > ul li:hover > ul {
+	margin-top: 5.3em;
+}
+#nav_menu ul li a {
+	text-align: center;
+	display: block;
+	padding: 0.75em 0;
+	text-decoration: none;
+	background-color: #525252;
+	color: white;
+}
+#nav_menu ul li a.current {
+	color: #fbd989;
+}
+#nav_menu ul li a:hover, #nav_menu ul li a:focus {
+	background-color: #257372;
+}
+#nav_menu ul ul ul {
+	top: 0;
+	left: 100%;
+}
+
+/* Sidebar Right */
+#sidebar1 {
+	background-color: black;
+	opacity: 0.8;
+	float: right;
+	position: relative;
+	width: 17.85%;
+	color: white;
+	padding: 1em 1%;
+	text-align: center;
+	height: 33em;
+}
+#sidebar1 img {
+	border: 0.1em solid #fbd989;;
+}
+#sidebar1 p {
+	margin: 0.5em 0;
+}
+.next {
+	margin-top: 2em;
+}
+
+/* Article */
+article {
+	width: 56%;
+	float: right;
+	position: relative;
+	padding: 2%;
+}
+article p{
+	text-indent: 2em;
+}
+
+/* Thumbnail */
+#thumbnail {
+	background-color: #fbd989;
+	opacity: 0.9;
+	float: left;
+	width: 19.9%;
+	height: 35em;
+}
+#thumbnail img {
+	border: 3px solid #FF00EB;
+}
+#thumbnail ul { 
+	list-style: none;
+	margin: 0 auto;
+	width: 70%;
+}
+#thumbnail ul li { 
+	margin-bottom: 1em;
+}
+#thumbnail ul li a {
+	display: block;
+	text-align: center;
+	background-color: black;
+	opacity: 0.9;
+	color: white;
+}
+#thumbnail ul li a img {
+	margin: 1em;
+	margin-bottom: 0;
+	margin: 0 auto;
+}
+#thumbnail ul li a:hover {
+	background-color: gray;
+}
+
+/* Footer */
+footer { 
+	color: white;
+	clear: both;
+	border-top: 1px solid black;
+	text-align: right;
+	background-color: #525252;
+	padding: 0.75em;
+}

@@ -1,0 +1,14 @@
+
+h2 {
+	padding-left: 30%;
+}
+
+video {
+	margin-top: 2em;
+	margin-left: 10%;
+	border: thin solid black;
+}
+
+#sidebar1 p {
+	margin: 0;
+}

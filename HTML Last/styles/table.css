@@ -1,0 +1,32 @@
+
+
+article {width: 76%;}
+
+figure {
+  float: left;
+  text-align: center;
+  font-style: italic;
+  border: thin silver solid;
+  padding: 0.5em;
+}
+figcaption {
+font-size: 150%;}
+
+table{
+	padding: 0 2em;
+	font-size: 175%;
+}
+th {
+	padding-right: 2em;
+	border: thin silver solid;
+}
+td {
+	border: thin silver solid;
+}
+
+div { padding-top: 5em; }
+
+.column {
+	font-weight: bold;
+	border: thin silver solid;
+}
